@@ -1,5 +1,5 @@
 #bootstrap-flash
-20 lines-of-code flash notification messages extension for Twitter Bootstrap.
+small-code flash notification messages extension for Twitter Bootstrap.
 
 
 ##Usage
