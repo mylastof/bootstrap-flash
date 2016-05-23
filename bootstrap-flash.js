@@ -9,7 +9,7 @@
 
 (function(){
     $(document).ready(function () {
-        $("body").prepend('<div class="bootstrap-flash alert alert-success alert-error hide" style="position:absolute;top:1px;left:25%;width:50%;float:left;z-index:1500;"><a class="close" href="#" onclick="$(this).parent().hide();return false;">&times;</a><p style="margin:0!important"></p></div>');
+        $("body").prepend('<div class="bootstrap-flash alert alert-success alert-danger hide" style="position:absolute;top:1px;left:25%;width:50%;float:left;z-index:1500;"><a class="close" href="#" onclick="$(this).parent().hide();return false;">&times;</a><p style="margin:0!important"></p></div>');
     });
 
     // Hide alert in 10 seconds
@@ -20,9 +20,10 @@
     this.flash = function(msg, err) {
         var box = $(".bootstrap-flash");
         if (err)
-            box.addClass("alert-error")
+            box.addClass("alert-danger show")
         else
-            box.removeClass("alert-error");
+            box.removeClass("alert-danger"),
+            box.addClass("show");
 
         box.find("p").html(msg);
         box.show();
