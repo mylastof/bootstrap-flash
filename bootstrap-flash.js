@@ -14,7 +14,9 @@
 
     // Hide alert in 10 seconds
     setInterval(function() {
-        $(".bootstrap-flash").removeClass('show').fadeOut("slow");
+        $(".bootstrap-flash").fadeOut("slow", function() {
+                    $( this ).removeClass( "show" );
+                })
     }, 10000);
 
     this.flash = function(msg, err) {
@@ -25,6 +27,8 @@
             box.removeClass("alert-danger");
 
         box.find("p").html(msg);
-        box.addClass("show");
+        box.show('fast', function() {
+                    $( this ).addClass( "show" );
+                });
     }
 }).call(this);
